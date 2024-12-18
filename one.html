@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unique Chat Conversations</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+
+            body {
+                background-color: #f9f9f9;
+                color: #333;
+            }
+
+            
+            
+            .top-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color:#f5f1f4;
+                color: #1a1a1b;
+                padding: 10px 20px;
+            }
+            
+
+            .top-nav .logo .img{
+                
+                    width: 100px;
+                    border-radius: 50%;
+                    display: block;
+                    margin: auto;
+                }
+                
+            img {
+                
+                    width: 100%;
+                    max-width: 30px;
+                    height: auto;
+                    max-height: 30px;
+                            }
+
+            .nav-links a {
+                color: #1a1919;
+                text-decoration: none;
+                margin-right: 20px;
+            }
+
+            .nav-links a:hover {
+                text-decoration: underline;
+                color: #1a5fbf;
+            }
+
+            .main .auth-buttons .login,
+            .main .auth-buttons .signup {
+                border:auto ;
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                height: 40px;
+                outline: none;
+
+            }
+
+            .auth-buttons :hover {
+                background: #1a5fbf;
+            }
+            
+            .banner {
+                background-color: #6a0dad;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+        
+            .main-content {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+            }
+
+            .left-content {
+                width: 50%;
+                
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .left-content h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .left-content .difficulty {
+                background-color: #ffd700;
+                color: #333;
+                padding: 2px 5px;
+                font-size: 14px;
+                border-radius: 3px;
+            }
+
+            .left-content ul {
+                margin-top: 10px;
+                list-style-type: square;
+                padding-left: 20px;
+            }
+
+            
+            .code-editor {
+                width: 50%;
+                background-color: #2e2e2e;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px #fff;
+            }
+
+            .editor-header {
+                background-color: #444;
+                    color: #fff;
+                padding: 5px 10px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                font-size: 14px;
+            }
+
+            .code-editor textarea {
+                width: 100%;
+                height: 300px;
+                background-color: #fff;
+                text-decoration-color: #33ff33;
+                border: none;
+                outline: none;
+                padding: 10px;
+                font-family: 'Courier New', monospace;
+                font-size: 14px;
+                resize: none;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+
+            .code-editor textarea::placeholder {
+                color: #666;
+                font-style: italic;
+            }
+            .navbar-bottom {
+                background-color: #444;
+                overflow: hidden;
+                padding: 10px 20px;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                color: white;
+            }
+
+            .navbar-bottom a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                display: inline-block;
+            }
+
+            .navbar-bottom a:hover {
+                background-color: #666;
+
+            }
+
+            .buttons {
+                border: none;
+                background-color: #fff;
+                color: #b1adb4;
+                padding: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+
+            }
+            button {
+                color: rgb(167, 163, 163);
+                border-radius: 5px;
+                background-color: #fff;
+                width: 100%;
+                max-width: 100px;
+            }
+            
+             
+            i {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                color: #6c757d;
+            }   
+                
+        </style>
+    </head>
+    <body>
+    
+        
+        <nav class="top-nav" id="navbar-main">
+            <div class="logo"> 
+                <img src="logo.jpg"> <strong>Exponent</strong>
+            </div>
+            <div class="nav-links">
+                <a href="#">Courses</a>
+                <a href="#">Questions</a>
+                <a href="#">Peer Mocks</a>
+                <a href="#">Coaching</a>
+                <a href="#">Partners</a>
+                <a href="#">Pricing</a>
+                <a href="#">...</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="login">Log in</button>
+                <button class="signup">Sign up</button>
+            </div>
+            <div class="search-box">
+                <div style="position: relative; width: 250px;">
+                    <i class="bi bi-search"></i> 
+                    <input type="text" placeholder="Search..." style="
+            padding-left: 35px;
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            height: 40px;
+            outline: none;
+        ">
+                </div>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+                
+            <div class="left-content">
+                <h2>Unique Chat Conversations <span class="difficulty">Medium</span></h2>
+                <nav class="navbar-bottom ">
+
+                    <div class="navbar-links">
+                        <a href="#">Question</a>
+                        <a href="#"><i class="bi bi-lock-fill"></i> solution</a>
+                                
+                    </div>
+                </nav>
+                <p><strong>WhatsApp</strong> is a popular messaging platform that allows users to send and receive text messages, voice notes, and multimedia messages in real-time. Users can engage in one-on-one chats or group chats, and every message sent has a unique identifier.</p>
+                <p>You're given a table, <code>messenger_sends</code>, with the following columns:</p>
+                <ul>
+                    <li><code>date</code>: the date the message was sent.</li>
+                    <li><code>ts</code>: the timestamp of when the message was sent.</li>
+                    <li><code>sender_id</code>: the unique identifier for the sender of the message.</li>
+                    <li><code>receiver_id</code>: the unique identifier for the receiver of the message.</li>
+                    <li><code>message_id</code>:a unique identifier for each message. </li>
+                </ul>
+                <p>Given that a conversation thread between two users A and B remains the same whether A messages B or B messages A, write a SQL query to determine how many unique conversation (<code>unique_conversations</code>) threads are present in the<code> messenger_sends</code> table.</p>
+                
+                <div class="buttons">
+                    <button class="save">
+                        <i class="bi bi-star"></i>Save
+                    </button>
+                    <button class="ask">
+                        <i class="bi bi-plus"></i>I was asked this
+                    </button>
+                    <button class="share">
+                        <i class="bi bi-share-fill"></i>Share
+                    </button>
+                        
+                    <button class="flag">
+                                    
+                        <i class="bi bi-exclamation-triangle-fill"></i>Flag
+                    </button>
+                </div>        
+                </div>
+                
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <button>SQLite <i class="bi bi-caret-down-fill"></i></button>
+                    </div>
+                    <textarea placeholder="-- Write your query here"></textarea>
+                </div>
+        </main>
+    </body>
+</html>
+                    
+
+              
+        
+            
+        
+            
+    
